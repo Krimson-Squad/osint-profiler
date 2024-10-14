@@ -19,7 +19,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <Router basename='/osint-profiler/'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
