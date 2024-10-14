@@ -17,16 +17,17 @@ const EditProfile = () => {
   });
 
   const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1') // Your Appwrite endpoint
-    .setProject(project_id); // Your Appwrite project ID
+    .setEndpoint('https://cloud.appwrite.io/v1') 
+    .setProject(project_id); 
 
   const databases = new Databases(client);
 
   const fetchProfile = async () => {
     try {
       const response = await databases.getDocument(database_id, collection_id, id);
+      const { $id, $databaseId, $collectionId, $createdAt, $updatedAt, ...userData } = response;
       setProfile(response);
-      setFormData(response);
+      setFormData(userData); 
       toast.success('Profile loaded successfully!');
     } catch (error) {
       console.error("Error fetching profile:", error);
@@ -47,6 +48,7 @@ const EditProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Update profile with only user-related fields
       await databases.updateDocument(database_id, collection_id, id, formData);
       toast.success('Profile updated successfully!');
     } catch (error) {
