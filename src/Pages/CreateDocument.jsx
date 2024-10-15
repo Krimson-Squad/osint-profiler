@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Client, Databases, ID } from "appwrite";
 import { project_id, database_id, collection_id } from "../lib/appwrite";
+
 const CreateDocument = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,24 +10,39 @@ const CreateDocument = () => {
     country: "",
     religion: ""
   });
+  const [error, setError] = useState("");
 
   const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1') // Your Appwrite endpoint
+    .setEndpoint("https://cloud.appwrite.io/v1") // Your Appwrite endpoint
     .setProject(project_id); // Your Appwrite project ID
 
   const databases = new Databases(client);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+
+    const words = value.trim().split(/\s+/); // Split on spaces or multiple spaces
+    if (words.length > 1) {
+      console.log("Latest word:", words[words.length - 2]); // Log the previous word
+    }
+
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.name.length < 4) {
+      setError("Name must have more than 4 letters");
+      console.error("Validation Error:", "Name must have more than 4 letters");
+      return; // Stop submission if validation fails
+    } else {
+      setError(""); // Clear error if validation passes
+    }
+
     try {
+      console.log("Submitting form data:", formData); // Log before sending the request
+
       const response = await databases.createDocument(
         database_id,
         collection_id,
@@ -39,6 +55,7 @@ const CreateDocument = () => {
           Religion: formData.religion
         }
       );
+
       console.log("Document created successfully:", response);
     } catch (error) {
       console.error("Error creating document:", error);
@@ -48,6 +65,7 @@ const CreateDocument = () => {
   return (
     <div>
       <h2>Create a Document</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
