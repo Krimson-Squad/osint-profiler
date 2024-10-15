@@ -9,11 +9,15 @@ const EditProfile = () => {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
-    Name: '',
-    Gender: '',
-    Age: '',
-    Country: '',
-    Religion: ''
+    name: "",
+    gender: "",
+    age: "",
+    country: "",
+    religion: "",
+    caste:"",
+    physic: "",
+    race: "",
+    parents: "",
   });
 
   const client = new Client()
@@ -64,65 +68,109 @@ const EditProfile = () => {
   return (
     <div className="container mt-4">
       <ToastContainer />
-      <h2>Edit Profile</h2>
+      <h2 className="text-white">Edit Profile</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Name:</label>
+            <label className="form-label text-white">Name:</label>
             <input
               type="text"
               className="form-control"
-              name="Name"
-              value={formData.Name}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Gender:</label>
+            <label className="form-label text-white">Gender:</label>
             <input
               type="text"
               className="form-control"
-              name="Gender"
-              value={formData.Gender}
+              name="gender"
+              value={formData.gender}
               onChange={handleChange}
               required
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Age:</label>
+            <label className="form-label text-white">Age:</label>
             <input
               type="number"
               className="form-control"
-              name="Age"
-              value={formData.Age}
+              name="age"
+              value={formData.age}
               onChange={handleChange}
               required
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Country:</label>
+            <label className="form-label text-white">Country:</label>
             <input
               type="text"
               className="form-control"
-              name="Country"
-              value={formData.Country}
+              name="country"
+              value={formData.country}
               onChange={handleChange}
               required
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Religion:</label>
+            <label className="form-label text-white">Religion:</label>
             <input
               type="text"
               className="form-control"
-              name="Religion"
-              value={formData.Religion}
+              name="religion"
+              value={formData.religion}
               onChange={handleChange}
               required
             />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Caste:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="caste"
+              value={formData.caste}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Physic:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="physic"
+              value={formData.physic}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Race:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="race"
+              value={formData.race}
+              onChange={handleChange}
+              required
+            />
+          <div className="mb-3">
+            <label className="form-label text-white">Parents:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="parents"
+              value={formData.parents}
+              onChange={handleChange}
+              required
+            />
+          </div>              
           </div>
           <button type="submit" className="btn btn-primary">Update Profile</button>
         </form>
