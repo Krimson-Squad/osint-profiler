@@ -6,6 +6,7 @@ import Profiler from './Pages/Profiler';
 import ViewProfiles from './Pages/ViewProfile';
 import EditProfile from './Pages/EditProfile';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/view-profile" element={<ViewProfiles />} />
         <Route path="/edit-profile/:id" element={<EditProfile />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
