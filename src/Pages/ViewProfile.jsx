@@ -36,7 +36,7 @@ const ViewProfiles = () => {
   }, []);
 
   const filteredProfiles = profiles.filter((profile) =>
-    profile.Name.toLowerCase().includes(searchTerm.toLowerCase())
+    profile.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -59,18 +59,18 @@ const ViewProfiles = () => {
               <div className="card">
                 <img src={`https://thispersondoesnotexist.com/`} />
                 <div className="card-body">
-                  <h5 className="card-title">{profile.Name}</h5>
+                  <h5 className="card-title">{profile.name}</h5>
                   <p className="card-text">
-                    <strong>Gender:</strong> {profile.Gender}
+                    <strong>Gender:</strong> {profile.gender}
                   </p>
                   <p className="card-text">
-                    <strong>Age:</strong> {profile.Age}
+                    <strong>Age:</strong> {profile.age}
                   </p>
                   <p className="card-text">
-                    <strong>Country:</strong> {profile.Country}
+                    <strong>Country:</strong> {profile.country}
                   </p>
                   <p className="card-text">
-                    <strong>Religion:</strong> {profile.Religion}
+                    <strong>Religion:</strong> {profile.religion}
                   </p>
                   <Link
                     to={`/edit-profile/${profile.$id}`}
