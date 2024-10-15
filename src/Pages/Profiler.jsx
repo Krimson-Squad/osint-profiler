@@ -4,7 +4,6 @@ import { project_id, database_id, collection_id } from "../lib/appwrite";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Profiler.css';
 
 const Profiler = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +11,7 @@ const Profiler = () => {
     gender: "",
     age: "",
     country: "",
-    religion: "",
-    caste:"",
-    physic: "",
-    race: "",
-    parents: "",
+    religion: ""
   });
 
   const client = new Client()
@@ -45,12 +40,7 @@ const Profiler = () => {
           Gender: formData.gender,
           Age: formData.age,
           Country: formData.country,
-          Religion: formData.religion,
-          Caste: formData.caste,
-          Physic: formData.physic,
-          Race: formData.race,
-          Parents: formData.parents
-
+          Religion: formData.religion
         }
       );
       // Show success toast
@@ -69,11 +59,7 @@ const Profiler = () => {
         gender: "",
         age: "",
         country: "",
-        religion: "",
-        caste:"",
-        physic: "",
-        race: "",
-    parents: "",
+        religion: ""
       });
     } catch (error) {
       // Show error toast
@@ -90,9 +76,8 @@ const Profiler = () => {
   };
 
   return (
-  <div className="outer-container">
-    <div className="d-flex justify-content-center align-items-center vh-100 pt-5">
-      <div className="card p-4 pt-5" style={{ width: '400px' }}>
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4" style={{ width: '400px' }}>
         <h2 className="mb-4 text-center">Create a Document</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -154,55 +139,7 @@ const Profiler = () => {
               required
             />
           </div>
-          
-          <div className="mb-3">
-            <label className="form-label">Caste</label>
-            <input
-              type="text"
-              name="caste"
-              className="form-control"
-              value={formData.caste}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
-          <div className="mb-3">
-            <label className="form-label">Physic</label>
-            <input
-              type="text"
-              name="physic"
-              className="form-control"
-              value={formData.physic}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
-          <div className="mb-3">
-            <label className="form-label">Race</label>
-            <input
-              type="text"
-              name="race"
-              className="form-control"
-              value={formData.race}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
-          <div className="mb-3">
-            <label className="form-label">Parents</label>
-            <input
-              type="text"
-              name="parents"
-              className="form-control"
-              value={formData.parents}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
+
           <button type="submit" className="btn btn-primary w-100">
             Create Document
           </button>
@@ -212,8 +149,6 @@ const Profiler = () => {
         <ToastContainer />
       </div>
     </div>
-  </div>
-
   );
 };
 
