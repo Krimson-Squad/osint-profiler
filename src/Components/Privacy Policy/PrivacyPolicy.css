@@ -1,0 +1,21 @@
+body {
+    background-color: #121212; 
+}
+
+h1, h2 {
+    border-bottom: 2px solid #555; 
+    padding-bottom: 0.5rem; 
+}
+
+ul li {
+    margin-bottom: 0.5rem; 
+}
+
+a {
+    text-decoration: underline;
+    transition: color 0.3s; 
+}
+
+a:hover {
+    color: #1e90ff; 
+}

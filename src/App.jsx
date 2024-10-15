@@ -7,8 +7,8 @@ import Profiler from './Pages/Profiler';
 import ViewProfiles from './Pages/ViewProfile';
 import EditProfile from './Pages/EditProfile';
 import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import PrivacyPolicy from './Components/PrivacyPolicy';
+import Footer from './Components/Footer/Footer';
+import PrivacyPolicy from './Components/Privacy Policy/PrivacyPolicy';
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -38,7 +38,7 @@ const App = () => {
 };
 
 const Home = () => {
-  return <h2>Welcome to the Home Page</h2>;
+  return <h2 className='text-white'>Welcome to the Home Page</h2>;
 };
 
 export default App;
