@@ -226,10 +226,6 @@
 
 ---
 
-Absolutely! Here’s an extended list of **more free and open-source OSINT APIs**, bringing the total to **50+ APIs**. These APIs cover a broader range of open-source intelligence sources, including additional security, social media, geolocation, and other investigative tools.
-
----
-
 ### 33. [ip-api](http://ip-api.com/)
 - **Description**: A fast and accurate IP geolocation API for location and organization data based on IP address.
 - **Free Tier**: Yes
@@ -256,7 +252,7 @@ Absolutely! Here’s an extended list of **more free and open-source OSINT APIs*
 
 ---
 
-## **Email & Domain Intelligence (Continued)**
+## **Email & Domain Intelligence**
 
 ### 37. [MxToolbox](https://mxtoolbox.com/api.aspx)
 - **Description**: Provides DNS, SMTP, and blacklist checking tools for domain and email server analysis.
@@ -284,7 +280,7 @@ Absolutely! Here’s an extended list of **more free and open-source OSINT APIs*
 
 ---
 
-## **Social Media & Web Scraping (Continued)**
+## **Social Media & Web Scraping**
 
 ### 41. [Social Search API](https://social-search.com/)
 - **Description**: A search engine for discovering social media profiles associated with a given username or email address.
@@ -324,7 +320,7 @@ Absolutely! Here’s an extended list of **more free and open-source OSINT APIs*
 
 ---
 
-## **Cybersecurity & Threat Intelligence APIs (Continued)**
+## **Cybersecurity & Threat Intelligence APIs**
 
 ### 47. [AbuseIPDB API](https://www.abuseipdb.com/)
 - **Description**: A public repository of reports on IP addresses that have been involved in malicious activity.
@@ -380,7 +376,7 @@ Absolutely! Here’s an extended list of **more free and open-source OSINT APIs*
 
 ---
 
-## **DNS & Network Analysis (Continued)**
+## **DNS & Network Analysis**
 
 ### 55. [DNSQuery API](https://www.dnsquery.io/)
 - **Description**: Allows you to perform DNS queries and retrieve records like A, MX, NS, and TXT.
