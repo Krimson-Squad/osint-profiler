@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
 import { account } from './lib/appwrite';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CreateDocument from './Pages/CreateDocument';
@@ -6,6 +7,8 @@ import Profiler from './Pages/Profiler';
 import ViewProfiles from './Pages/ViewProfile';
 import EditProfile from './Pages/EditProfile';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import PrivacyPolicy from './Components/PrivacyPolicy';
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -27,7 +30,9 @@ const App = () => {
         <Route path="/create-profile" element={<Profiler />} />
         <Route path="/view-profile" element={<ViewProfiles />} />
         <Route path="/edit-profile/:id" element={<EditProfile />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

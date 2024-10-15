@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { Client, Databases } from 'appwrite';
 import { project_id, database_id, collection_id } from '../lib/appwrite';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const ViewProfiles = () => {
   const [profiles, setProfiles] = useState([]);
